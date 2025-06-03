@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import fetch from "node-fetch";
 
 dotenv.config();
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -29,16 +30,13 @@ app.post("/api/chat", async (req, res) => {
     res.json({ reply });
 
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error in GPT fetch:", error);
     res.status(500).json({ reply: "Server error. Try again later." });
   }
 });
 
+// ✅ THIS IS THE ONLY VALID WAY
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ Chatbot server running on port ${PORT}`);
-});
-
 app.listen(PORT, () => {
   console.log(`✅ Chatbot server running on port ${PORT}`);
 });
