@@ -20,26 +20,26 @@ app.post("/api/chat", async (req, res) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: message }]
+        model: "gpt-3.5-turbo-0125",      
+        messages: [{ role: "user", content: message }],
+        max_tokens: 150,                  
+        temperature: 0.7                  
       })
     });
 
     const data = await response.json();
+    console.log("🧠 OpenAI raw response:", JSON.stringify(data, null, 2));
+
     const reply = data.choices?.[0]?.message?.content || "No reply";
     res.json({ reply });
 
   } catch (error) {
-    console.error("Error in GPT fetch:", error);
+    console.error("❌ Error in GPT fetch:", error);
     res.status(500).json({ reply: "Server error. Try again later." });
   }
 });
 
-// ✅ THIS IS THE ONLY VALID WAY
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`✅ Chatbot server running on port ${PORT}`);
 });
-
-console.log("OpenAI response:", JSON.stringify(data, null, 2));
-
