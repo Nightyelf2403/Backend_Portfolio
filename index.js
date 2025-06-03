@@ -21,8 +21,8 @@ app.post("/api/chat", async (req, res) => {
       },
       body: JSON.stringify({
         model: "command",                // ✅ switch from command-nightly to command
-        prompt: message,
-        max_tokens: 150,
+        prompt: `You are a helpful assistant on a software portfolio website. Answer this briefly and professionally:\n\n${message}`,
+        max_tokens: 100,
         temperature: 0.7,
         k: 0,
         stop_sequences: [],
