@@ -36,7 +36,7 @@ app.post("/api/chat", async (req, res) => {
 });
 
 // ✅ THIS IS THE ONLY VALID WAY
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`✅ Chatbot server running on port ${PORT}`);
 });
