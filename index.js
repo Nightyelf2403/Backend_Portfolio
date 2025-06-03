@@ -20,7 +20,7 @@ app.post("/api/chat", async (req, res) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "command-nightly",     
+        model: "command",                // ✅ switch from command-nightly to command
         prompt: message,
         max_tokens: 150,
         temperature: 0.7,
@@ -42,7 +42,7 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Cohere-based chatbot server running on port ${PORT}`);
 });
