@@ -40,3 +40,6 @@ const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`✅ Chatbot server running on port ${PORT}`);
 });
+
+console.log("OpenAI response:", JSON.stringify(data, null, 2));
+
