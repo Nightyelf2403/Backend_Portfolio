@@ -48,7 +48,7 @@ app.post("/api/chat", async (req, res) => {
     return res.json({
       reply:
         `📧 You can reach me at: adiaditya7907@gmail.com\n` +
-        `🌐 LinkedIn: [linkedin.com/in/lalithaditya](https://linkedin.com/in/lalithaditya)`
+        `🌐 LinkedIn: [linkedin.com/in/lalith-aditya-chunduri-76573421a/](https://linkedin.com/in/lalithaditya)`
     });
   }
 
