@@ -16,7 +16,8 @@ app.post("/api/chat", async (req, res) => {
   // === 🎯 CUSTOM REPLIES ===
   if (lowerMsg.includes("resume")) {
     return res.json({
-      reply: "Sure! You can download my resume here: [Download Resume](files/Lalith_Resume.pdf)"
+      reply: "Sure! You can download my resume here: <a href='files/Lalith_Resume.pdf' target='_blank'>Download Resume</a>"
+
     });
   }
 
